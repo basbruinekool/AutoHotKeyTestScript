@@ -1,0 +1,15 @@
+;Run below loopscript when windows+z is pressed
+#z::
+Loop
+{
+   if a_index > 3000
+   break  ; Terminate the loop
+;MsgBox, Iteration number is %A_Index%
+SplashTextOn ,200 ,200 , Splash, Iteration number is %A_Index%
+Sleep 500
+SplashTextOff
+Random ATEMChange, 1, 9   
+Random SleepTiming, 1, 4000
+   ControlSend, , %ATEMChange%, ATEM
+   Sleep, %SleepTiming%
+}
